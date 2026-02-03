@@ -7,8 +7,6 @@ import pom.selectors.pagesSelectors.HomePageSel;
 import pom.selectors.thruSelectors.Header;
 import pom.selectors.thruSelectors.Footer;
 
-import java.io.File;
-
 public class FormsPage {
 
     private final Actions actions = new Actions();
@@ -26,7 +24,6 @@ public class FormsPage {
     public void mainFormsElementsIsDisplayed() {
         assertions.isVisible(formsPageSel.leftMenuPracticeForm);
         assertions.isVisible(formsPageSel.titlePleaseSelect);
-
         assertions.isVisible(header.pageTitle);
         assertions.isVisible(footer.allRightsReserved);
     }
@@ -35,8 +32,9 @@ public class FormsPage {
         actions.clickWithTimeout(formsPageSel.leftMenuPracticeForm);
     }
 
-    public void mainElementsRegFormIsVisible(){
+    public void mainElementsRegFormIsDisplayed(){
         assertions.isVisible(formsPageSel.titlePracticeForm);
+
         assertions.isVisible(formsPageSel.inputFirstNameReg);
         assertions.isVisible(formsPageSel.inputLastNameReg);
         assertions.isVisible(formsPageSel.inputUserEmailReg);
@@ -61,5 +59,35 @@ public class FormsPage {
 
     public void uploadPictureFile(){
         actions.uploadFile(formsPageSel.uploadPictureReg, "2025-08-30 11.11.21.jpg");
+
+    }
+
+    public void fillOutRequiredFields(
+            String firstName, String lastName, String userEmail, String userNumber) {
+
+        actions.click(formsPageSel.inputFirstNameReg);
+        actions.setText(formsPageSel.inputFirstNameReg, firstName);
+
+        actions.click(formsPageSel.inputLastNameReg);
+        actions.setText(formsPageSel.inputLastNameReg, lastName);
+
+        actions.click(formsPageSel.inputUserEmailReg);
+        actions.setText(formsPageSel.inputUserEmailReg, userEmail);
+
+        actions.click(formsPageSel.radioBtnMaleReg);
+
+        actions.click(formsPageSel.inputUserNumberReg);
+        actions.setText(formsPageSel.inputUserNumberReg, userNumber);
+
+//        actions.click(formsPageSel.inputDateOfBirthReg);
+//        actions.click(formsPageSel.inputSubjectsContainerReg);
+//        actions.click(formsPageSel.checkBoxSportReg);
+//        actions.click(formsPageSel.checkBoxReadingReg);
+//        actions.click(formsPageSel.checkBoxMusicReg);
+//        actions.uploadFile(formsPageSel.uploadPictureReg, "2025-08-30 11.11.21.jpg");
+//        actions.setText(formsPageSel.inputCurrentAddressReg, currentAddress);
+//        actions.click(formsPageSel.selectStateReg);
+//        actions.click(formsPageSel.selectCityReg);
+//        actions.click(formsPageSel.btnSubmitReg);
     }
 }

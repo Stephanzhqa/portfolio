@@ -7,6 +7,7 @@ import config.BasePage;
 import pom.pages.HomePage;
 import pom.pages.BookStoreAppPage;
 import tests.config.BaseUITest;
+import logger.BaseLogger;
 
 
 @ExtendWith(TextReportExtension.class)
@@ -16,13 +17,14 @@ public class BookStoreAppPageTest extends BaseUITest {
     private final BasePage basePage = new BasePage();
     private final HomePage homePage = new HomePage();
     private final BookStoreAppPage bookStoreAppPage = new BookStoreAppPage();
+    private final BaseLogger baseLogger = new BaseLogger();
 
     @Test
     void userCanOpenBookStoreAppPage() {
-        basePage.openUrl("https://demoqa.com");
-        homePage.mainCardsShouldBeDisplayed();
-        bookStoreAppPage.openBookStoreAppPage();
-        bookStoreAppPage.mainPanelBookStoreAppIsDisplayed();
-        bookStoreAppPage.thruElementsIsDisplayed();
+        basePage.openUrl("https://demoqa.com"); baseLogger.consoleLogInfo("Home page opened");
+        homePage.mainCardsShouldBeDisplayed(); baseLogger.consoleLogInfo("Home page elements displayed");
+        bookStoreAppPage.openBookStoreAppPage(); baseLogger.consoleLogInfo("Book store app page opened");
+        bookStoreAppPage.mainPanelBookStoreAppIsDisplayed(); baseLogger.consoleLogInfo("Book Store elements displayed");
+        bookStoreAppPage.thruElementsIsDisplayed(); baseLogger.consoleLogInfo("Thru elements displayed");
     }
 }

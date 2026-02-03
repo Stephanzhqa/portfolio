@@ -1,9 +1,7 @@
 package helpers;
 
 import com.codeborne.selenide.SelenideElement;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class Actions {
@@ -24,4 +22,9 @@ public class Actions {
         File file = new File(fileName);
         selenideElement.uploadFile(file);
     }
+
+    public void setText(SelenideElement element, String text) {
+        element.setValue(text);
+    }
+
 }
