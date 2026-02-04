@@ -20,7 +20,9 @@ public class HomePageTest extends BaseUITest {
     @Tag("all-api")
     @Test
     public void userCanOpenHomePage() {
-        basePage.openUrl("https://demoqa.com"); baseLogger.consoleLogInfo("Home page opened");
-//        homePage.mainCardsShouldBeDisplayed(); baseLogger.consoleLogInfo("Home page elements displayed");
+        basePage.openUrl("https://demoqa.com");
+        baseLogger.consoleLogInfo("Home page opened");
+        homePage.mainCardsShouldBeDisplayed();
+        baseLogger.consoleLogInfo("Home page elements displayed");
     }
 }

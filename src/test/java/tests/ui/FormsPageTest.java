@@ -21,9 +21,13 @@ public class FormsPageTest extends BaseUITest {
 
     @Test
     void userCanOpenFormsPage() {
-        basePage.openUrl("https://demoqa.com"); baseLogger.consoleLogInfo("Home page opened");
-        homePage.mainCardsShouldBeDisplayed(); baseLogger.consoleLogInfo("Home page main elements displayed");
-        formsPage.openFormsPage(); baseLogger.consoleLogInfo("Forms page opened");
-        formsPage.mainFormsElementsIsDisplayed(); baseLogger.consoleLogInfo("Forms page main elements displayed");
+        basePage.openUrl("https://demoqa.com");
+        baseLogger.consoleLogInfo("Home page opened");
+        homePage.mainCardsShouldBeDisplayed();
+        baseLogger.consoleLogInfo("Home page main elements displayed");
+        formsPage.openFormsPage();
+        baseLogger.consoleLogInfo("Forms page opened");
+        formsPage.mainFormsElementsIsDisplayed();
+        baseLogger.consoleLogInfo("Forms page main elements displayed");
     }
 }

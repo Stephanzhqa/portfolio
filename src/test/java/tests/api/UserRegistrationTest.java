@@ -1,5 +1,6 @@
 package tests.api;
 
+import io.restassured.specification.RequestSpecification;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,7 +22,7 @@ public class UserRegistrationTest {
     @DisplayName("POST /Successful user registration")
     void shouldRegisterNewUserSuccessfully() {
         //Test Data
-        String username = "user_" + UUID.randomUUID(); //Prevents duplicate user errors, Makes test repeatable
+        String username = "user_" + UUID.randomUUID(); //Prevents duplicate user errors, Makes test repeatable,UUID guarantees uniqueness
         String password = "Password123!";
 
         //Request
@@ -36,19 +37,15 @@ public class UserRegistrationTest {
                               }
                               """.formatted(username, password)))
                         .log().all()
-
                         .when()
                         .post(REGISTER_ENDPOINT)
-
-                        .then() //Assertions start here
+                        .then()
                         .statusCode(201)
                         .body("userID", notNullValue())
                         .body("username", equalTo(username))
                         .body("books", empty())
-                        .extract().response();
+                        .extract().response(); //extra Java assertions.
 
-        //Additional Assertions
-    String userID = response.jsonPath().getString("userID");
     Object userId = response.jsonPath().get("userID");
 
         assertNotNull(userId, "User ID should not be null");

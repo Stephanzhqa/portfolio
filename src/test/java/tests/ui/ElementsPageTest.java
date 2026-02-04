@@ -20,9 +20,13 @@ public class ElementsPageTest extends BaseUITest {
 
     @Test
     void userCanOpenElementsPage() {
-        basePage.openUrl("https://demoqa.com"); baseLogger.consoleLogInfo("Home page opened");
-        homePage.mainCardsShouldBeDisplayed(); baseLogger.consoleLogInfo("Home page elements displayed");
-        elementsPage.openElementsPage(); baseLogger.consoleLogInfo("Elements page opened");
-        elementsPage.mainElementsElementsIsDisplayed(); baseLogger.consoleLogInfo("Elements page elements displayed");
+        basePage.openUrl("https://demoqa.com");
+        baseLogger.consoleLogInfo("Home page opened");
+        homePage.mainCardsShouldBeDisplayed();
+        baseLogger.consoleLogInfo("Home page elements displayed");
+        elementsPage.openElementsPage();
+        baseLogger.consoleLogInfo("Elements page opened");
+        elementsPage.mainElementsElementsIsDisplayed();
+        baseLogger.consoleLogInfo("Elements page elements displayed");
     }
 }

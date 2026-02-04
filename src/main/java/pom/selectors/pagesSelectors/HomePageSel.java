@@ -10,5 +10,5 @@ public class HomePageSel {
     public final SelenideElement alertsFrameWindowsCard = $x("//h5[text() ='Alerts, Frame & Windows']");
     public final SelenideElement widgetsCard = $x("//h5[text() ='Widgets']");
     public final SelenideElement interactionsCard = $x("//h5[text() ='Interactions']");
-    public final SelenideElement bookStoreAppCard = $x("//h5[text() ='Book Store Application']");
+    public final SelenideElement bookStoreAppCard = $x("//h5[text()='Book Store Application']");
 }

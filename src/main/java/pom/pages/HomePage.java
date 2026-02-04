@@ -4,6 +4,8 @@ import helpers.Assertions;
 import pom.selectors.pagesSelectors.HomePageSel;
 import pom.selectors.thruSelectors.Footer;
 
+import static com.codeborne.selenide.Selenide.sleep;
+
 
 public class HomePage {
 

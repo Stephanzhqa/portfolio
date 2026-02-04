@@ -20,13 +20,19 @@ public class PracticeFormPageTest extends BaseUITest {
 
 
     @Test
-
     void userCanOpenFormsPage() {
-        basePage.openUrl("https://demoqa.com"); baseLogger.consoleLogInfo("Home page is opened");
-        homePage.mainCardsShouldBeDisplayed(); baseLogger.consoleLogInfo("Home page elements is displayed");
-        formsPage.openFormsPage(); baseLogger.consoleLogInfo("Forms page is opened");
-        formsPage.mainFormsElementsIsDisplayed(); baseLogger.consoleLogInfo("Forms page elements is displayed");
-        formsPage.openPracticeFormPage(); baseLogger.consoleLogInfo("Practice form page is opened");
-        formsPage.mainElementsRegFormIsDisplayed(); baseLogger.consoleLogInfo("Forms page elements is displayed");
+
+        basePage.openUrl("https://demoqa.com");
+        baseLogger.consoleLogInfo("Home page is opened");
+        homePage.mainCardsShouldBeDisplayed();
+        baseLogger.consoleLogInfo("Home page elements is displayed");
+        formsPage.openFormsPage();
+        baseLogger.consoleLogInfo("Forms page is opened");
+        formsPage.mainFormsElementsIsDisplayed();
+        baseLogger.consoleLogInfo("Forms page elements is displayed");
+        formsPage.openPracticeFormPage();
+        baseLogger.consoleLogInfo("Practice form page is opened");
+        formsPage.mainElementsRegFormIsDisplayed();
+        baseLogger.consoleLogInfo("Forms page elements is displayed");
     }
 }

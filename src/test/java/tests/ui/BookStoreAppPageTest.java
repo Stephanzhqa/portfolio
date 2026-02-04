@@ -21,10 +21,15 @@ public class BookStoreAppPageTest extends BaseUITest {
 
     @Test
     void userCanOpenBookStoreAppPage() {
-        basePage.openUrl("https://demoqa.com"); baseLogger.consoleLogInfo("Home page opened");
-        homePage.mainCardsShouldBeDisplayed(); baseLogger.consoleLogInfo("Home page elements displayed");
-        bookStoreAppPage.openBookStoreAppPage(); baseLogger.consoleLogInfo("Book store app page opened");
-        bookStoreAppPage.mainPanelBookStoreAppIsDisplayed(); baseLogger.consoleLogInfo("Book Store elements displayed");
-        bookStoreAppPage.thruElementsIsDisplayed(); baseLogger.consoleLogInfo("Thru elements displayed");
+        basePage.openUrl("https://demoqa.com");
+        baseLogger.consoleLogInfo("Home page opened");
+        homePage.mainCardsShouldBeDisplayed();
+        baseLogger.consoleLogInfo("Home page elements displayed");
+        bookStoreAppPage.openBookStoreAppPage();
+        baseLogger.consoleLogInfo("Book store app page opened");
+        bookStoreAppPage.mainPanelBookStoreAppIsDisplayed();
+        baseLogger.consoleLogInfo("Book Store elements displayed");
+        bookStoreAppPage.thruElementsIsDisplayed();
+        baseLogger.consoleLogInfo("Thru elements displayed");
     }
 }

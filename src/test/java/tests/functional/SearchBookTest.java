@@ -20,8 +20,11 @@ public class SearchBookTest extends BaseUITest {
 
     @Test
     public void userCanSearchBook() {
-        basePage.openUrl("https://demoqa.com/books"); baseLogger.consoleLogInfo("Book page opened");
-        searchPage.mainElementsSearchIsDisplayed(); baseLogger.consoleLogInfo("Search page elements displayed");
-        searchPage.successfulSearchBook();baseLogger.consoleLogInfo("Book successfully found");
+        basePage.openUrl("/books");
+        baseLogger.consoleLogInfo("Book page opened");
+        searchPage.mainElementsSearchIsDisplayed();
+        baseLogger.consoleLogInfo("Search page elements displayed");
+        searchPage.successfulSearchBook();
+        baseLogger.consoleLogInfo("Book successfully found");
     }
 }
