@@ -4,7 +4,7 @@ import com.codeborne.selenide.junit5.TextReportExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import config.BasePage;
-import pom.pages.FormsPage;
+import pom.pages.PracticeFormPage;
 import pom.pages.HomePage;
 import tests.config.BaseUITest;
 import logger.BaseLogger;
@@ -15,12 +15,13 @@ public class FormsPageTest extends BaseUITest {
 
     private final BasePage basePage = new BasePage();
     private final HomePage homePage = new HomePage();
-    private final FormsPage formsPage = new FormsPage();
+    private final PracticeFormPage formsPage = new PracticeFormPage();
     private final BaseLogger baseLogger = new BaseLogger();
 
 
     @Test
     void userCanOpenFormsPage() {
+
         basePage.openUrl("https://demoqa.com");
         baseLogger.consoleLogInfo("Home page opened");
         homePage.mainCardsShouldBeDisplayed();

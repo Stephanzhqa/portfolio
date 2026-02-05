@@ -9,6 +9,7 @@ public class RegisterPageSel {
     public final SelenideElement inputLastNameReg = $x("//input[@id='lastname']");
     public final SelenideElement inputUserNameReg = $x("//input[@id='userName']");
     public final SelenideElement inputPasswordReg = $x("//input[@id='password']");
-    public final SelenideElement reCaptcha = $x("//span[@id='recaptcha-anchor']");
+//    public final SelenideElement reCaptcha = $x("//span[@id='recaptcha-anchor']");
     public final SelenideElement registerBtn = $x("//button[@id='register']");
+    public final SelenideElement backToLoginBtn = $x("//button[@id='gotologin']");
 }

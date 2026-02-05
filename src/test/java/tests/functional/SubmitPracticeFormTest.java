@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import config.BasePage;
 import logger.BaseLogger;
 
-import pom.pages.FormsPage;
+import pom.pages.PracticeFormPage;
 import tests.config.BaseUITest;
 
 @ExtendWith(TextReportExtension.class)
@@ -14,7 +14,7 @@ import tests.config.BaseUITest;
 public class SubmitPracticeFormTest extends BaseUITest {
 
     private final BasePage basePage = new BasePage();
-    private final FormsPage formsPage = new FormsPage();
+    private final PracticeFormPage formsPage = new PracticeFormPage();
     private final BaseLogger baseLogger = new BaseLogger();
 
 

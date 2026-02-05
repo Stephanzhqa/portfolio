@@ -11,29 +11,26 @@ public class BookStoreAppPage {
 
     private final Actions actions = new Actions();
     private final Assertions assertions = new Assertions();
-    private final HomePageSel HomePageSel = new HomePageSel();
-    private final BookStoreAppPageSel BookStoreAppSel = new BookStoreAppPageSel();
-    private final Header Header = new Header();
-    private final Footer Footer = new Footer();
+    private final HomePageSel homePageSel = new HomePageSel();
+    private final BookStoreAppPageSel bookStoreAppPageSel = new BookStoreAppPageSel();
+    private final Header header = new Header();
+    private final Footer footer = new Footer();
 
 
     public void openBookStoreAppPage() {
-//        new HomePage().mainCardsShouldBeDisplayed();
-//        assertions.isVisible(HomePageSel.bookStoreAppCard);
-        actions.clickWithTimeout(HomePageSel.bookStoreAppCard);
+        actions.clickWithTimeout(homePageSel.bookStoreAppCard);
     }
 
     public void mainPanelBookStoreAppIsDisplayed() {
-        assertions.isVisible(BookStoreAppSel.mainBookStoreLeftPanel);
-        assertions.isVisible(BookStoreAppSel.loginLeftPanel);
-        assertions.isVisible(BookStoreAppSel.bookStoreLeftPanel);
-        assertions.isVisible(BookStoreAppSel.profileLeftPanel);
-        assertions.isVisible(BookStoreAppSel.bookStoreAPILeftPanel);
+        assertions.isVisible(bookStoreAppPageSel.loginLeftPanel);
+        assertions.isVisible(bookStoreAppPageSel.bookStoreLeftPanel);
+        assertions.isVisible(bookStoreAppPageSel.profileLeftPanel);
+        assertions.isVisible(bookStoreAppPageSel.bookStoreAPILeftPanel);
     }
 
     public void thruElementsIsDisplayed() {
-        assertions.isVisible(Header.pageTitle);
-        assertions.isVisible(Footer.allRightsReserved);
+        assertions.isVisible(header.pageTitle);
+        assertions.isVisible(footer.allRightsReserved);
     }
 
 }

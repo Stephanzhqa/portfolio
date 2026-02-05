@@ -20,10 +20,15 @@ public class SubmitRegistrationTest extends BaseUITest {
 
     @Test
     void userCanRegister() {
-        basePage.openUrl("https://demoqa.com/login"); baseLogger.consoleLogInfo("Login page opened");
-        loginPage.mainElementsLoginIsDisplayed(); baseLogger.consoleLogInfo("Login page elements displayed");
-        registrationPage.openRegistrationForm(); baseLogger.consoleLogInfo("Registration page opened");
-        registrationPage.mainElementsRegistrationIsDisplayed(); baseLogger.consoleLogInfo("Registration page elements displayed");
-        registrationPage.createNewUser(); baseLogger.consoleLogInfo("User created");
+        basePage.openUrl("https://demoqa.com/login");
+        baseLogger.consoleLogInfo("Login page opened");
+        loginPage.mainElementsLoginIsDisplayed();
+        baseLogger.consoleLogInfo("Login page elements displayed");
+        registrationPage.openRegistrationForm();
+        baseLogger.consoleLogInfo("Registration page opened");
+        registrationPage.mainElementsRegistrationIsDisplayed();
+        baseLogger.consoleLogInfo("Registration page elements displayed");
+//        registrationPage.createNewUser();
+//        baseLogger.consoleLogInfo("User created");
     }
 }

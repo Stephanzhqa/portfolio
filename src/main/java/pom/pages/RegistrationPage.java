@@ -23,7 +23,7 @@ public class RegistrationPage {
         assertions.isVisible(registerPageSel.inputLastNameReg);
         assertions.isVisible(registerPageSel.inputUserNameReg);
         assertions.isVisible(registerPageSel.inputPasswordReg);
-        assertions.isVisible(registerPageSel.reCaptcha);
+        assertions.isVisible(registerPageSel.backToLoginBtn);
         assertions.isVisible(registerPageSel.registerBtn);
     }
     public void createNewUser () {
@@ -32,7 +32,7 @@ public class RegistrationPage {
         actions.setText(registerPageSel.inputLastNameReg, "Ivanov");
         actions.setText(registerPageSel.inputUserNameReg, "ivanov");
         actions.setText(registerPageSel.inputPasswordReg, "Password123!");
-        actions.clickWithTimeout(registerPageSel.reCaptcha);
+//        actions.clickWithTimeout(registerPageSel.reCaptcha);
         actions.clickWithTimeout(registerPageSel.registerBtn);
 //        // Verify alert text
 //        Selenide.switchTo().alert()

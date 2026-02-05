@@ -3,7 +3,6 @@ package pom.pages;
 import helpers.Actions;
 import helpers.Assertions;
 import pom.selectors.pagesSelectors.SearchPageSel;
-import pom.selectors.pagesSelectors.HomePageSel;
 import pom.selectors.thruSelectors.Footer;
 import pom.selectors.thruSelectors.Header;
 
@@ -11,7 +10,6 @@ public class SearchPage {
 
     private final Actions actions = new Actions();
     private final Assertions assertions = new Assertions();
-    private final pom.selectors.pagesSelectors.HomePageSel HomePageSel = new HomePageSel();
     private final SearchPageSel searchPageSel = new SearchPageSel();
     private final pom.selectors.thruSelectors.Header Header = new Header();
     private final pom.selectors.thruSelectors.Footer Footer = new Footer();

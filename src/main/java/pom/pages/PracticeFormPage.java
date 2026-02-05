@@ -7,7 +7,7 @@ import pom.selectors.pagesSelectors.HomePageSel;
 import pom.selectors.thruSelectors.Header;
 import pom.selectors.thruSelectors.Footer;
 
-public class FormsPage {
+public class PracticeFormPage {
 
     private final Actions actions = new Actions();
     private final Assertions assertions = new Assertions();
