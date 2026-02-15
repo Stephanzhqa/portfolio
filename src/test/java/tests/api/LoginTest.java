@@ -1,5 +1,6 @@
 package tests.api;
 
+import config.CredentialsConfig;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,12 +14,11 @@ public class LoginTest {
     private static final String BASE_URL = "https://demoqa.com";
     private static final String LOGIN_ENDPOINT = "/Account/v1/Login";
 
-    private static final String USERNAME = "Nick";
-    private static final String PASSWORD = "Alex123!";
-
     @Test
     @DisplayName("POST / Login with valid credentials")
     void shouldLoginSuccessfully() {
+        String username = CredentialsConfig.demoQaUsername();
+        String password = CredentialsConfig.demoQaPassword();
 
         Response response =
                 given()
@@ -29,14 +29,14 @@ public class LoginTest {
                                   "userName": "%s",
                                   "password": "%s"
                                 }
-                                """.formatted(USERNAME, PASSWORD))
+                                """.formatted(username, password))
                         .log().all()
                         .when()
                         .post(LOGIN_ENDPOINT)
                         .then()
                         .statusCode(200)
                         .body("userId", notNullValue())
-                        .body("username", equalTo(USERNAME))
+                        .body("username", equalTo(username))
                         .body("token", notNullValue())
                         .body("expires", notNullValue())
                         .body("isActive", notNullValue())

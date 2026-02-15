@@ -1,20 +1,22 @@
 package helpers;
 
 import com.codeborne.selenide.SelenideElement;
+
 import java.io.File;
-import static com.codeborne.selenide.Selenide.sleep;
+import java.time.Duration;
+
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.visible;
 
 public class Actions {
     public void click(SelenideElement element){
-        //todo реализоваь ожидание перед кликом
-        //todo реализовать обработку ошибки и дейсвтвие в случаях ее появления
-        //todo реализовать проверку видимости перед кликом
-        element.click();
+        element.shouldBe(visible, Duration.ofSeconds(10))
+                .shouldBe(enabled, Duration.ofSeconds(10))
+                .click();
     }
 
     public void clickWithTimeout(SelenideElement element){
-        System.out.println("clicked with 5sec timeout");
-        sleep(5000);
+        System.out.println("clicked with explicit wait");
         click(element);
     }
 

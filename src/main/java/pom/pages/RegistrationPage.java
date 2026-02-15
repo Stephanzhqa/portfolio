@@ -5,8 +5,6 @@ import helpers.Assertions;
 import pom.selectors.pagesSelectors.LoginPageSel;
 import pom.selectors.pagesSelectors.RegisterPageSel;
 
-import static com.codeborne.selenide.Selenide.sleep;
-
 public class RegistrationPage {
     private final Actions actions = new Actions();
     private final Assertions assertions = new Assertions();
@@ -18,7 +16,6 @@ public class RegistrationPage {
     }
 
     public void mainElementsRegistrationIsDisplayed() {
-        sleep(5000);
         assertions.isVisible(registerPageSel.inputFirstNameReg);
         assertions.isVisible(registerPageSel.inputLastNameReg);
         assertions.isVisible(registerPageSel.inputUserNameReg);
@@ -27,7 +24,6 @@ public class RegistrationPage {
         assertions.isVisible(registerPageSel.registerBtn);
     }
     public void createNewUser () {
-        sleep(5000);
         actions.setText(registerPageSel.inputFirstNameReg, "Ivan");
         actions.setText(registerPageSel.inputLastNameReg, "Ivanov");
         actions.setText(registerPageSel.inputUserNameReg, "ivanov");

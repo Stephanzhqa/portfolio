@@ -1,12 +1,11 @@
 package pom.pages;
 
+import config.CredentialsConfig;
 import helpers.Actions;
 import helpers.Assertions;
 import pom.selectors.pagesSelectors.LoginPageSel;
 import pom.selectors.thruSelectors.Footer;
 import pom.selectors.thruSelectors.Header;
-
-import static com.codeborne.selenide.Selenide.sleep;
 
 
 public class LoginPage {
@@ -19,7 +18,6 @@ public class LoginPage {
 
 
     public void mainElementsLoginIsDisplayed() {
-        sleep(5000);
         assertions.isVisible(loginPageSel.inputUserName);
         assertions.isVisible(loginPageSel.inputPassword);
         assertions.isVisible(loginPageSel.buttonLogin);
@@ -30,9 +28,9 @@ public class LoginPage {
 
     public void successfulLogin () {
         actions.click(loginPageSel.inputUserName);
-        actions.setText(loginPageSel.inputUserName, "Vladimir");
+        actions.setText(loginPageSel.inputUserName, CredentialsConfig.demoQaUsername());
         actions.click(loginPageSel.inputPassword);
-        actions.setText(loginPageSel.inputPassword, "123123123Aa!");
+        actions.setText(loginPageSel.inputPassword, CredentialsConfig.demoQaPassword());
         actions.click(loginPageSel.buttonLogin);
         //assertion needed
     }

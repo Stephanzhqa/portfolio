@@ -24,7 +24,7 @@ public class HomePageTest extends BaseUITest {
 
 
     @Test
-    @Tag("UI")
+    @Tag("ui")
     @Story("User can open Home Page")
     @Feature("all main elements are displayed")
     @Description("The test verifies that the user opens the home page and all main elements are displayed")

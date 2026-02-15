@@ -1,7 +1,7 @@
 package tests.api;
 
+import config.CredentialsConfig;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,13 +14,11 @@ public class GenerateTokenTest {
     private static final String BASE_URL = "https://demoqa.com";
     private static final String TOKEN_ENDPOINT = "/Account/v1/GenerateToken";
 
-    // Use existing user (already registered)
-    private static final String USERNAME = "Al";
-    private static final String PASSWORD = "Alex123!";
-
     @Test
     @DisplayName("POST / Generate token for valid user")
     void shouldGenerateTokenSuccessfully() {
+        String username = CredentialsConfig.demoQaUsername();
+        String password = CredentialsConfig.demoQaPassword();
 
         Response response =
                 given()
@@ -31,7 +29,7 @@ public class GenerateTokenTest {
                               "userName": "%s",
                               "password": "%s"
                             }
-                            """.formatted(USERNAME, PASSWORD))
+                            """.formatted(username, password))
                         .log().all()
                         .when()
                         .post(TOKEN_ENDPOINT)
