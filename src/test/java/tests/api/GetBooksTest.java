@@ -29,7 +29,7 @@ public class GetBooksTest {
                         .then() //Assertions start here
                         .statusCode(200)
                         .body("books", not(empty()))
-                        .extract().response(); //Only happens if previous steps passed
+                        .extract().response();//Only happens if previous steps passed
 
         List<Map<String, Object>> books = response.jsonPath().getList("books"); //Converts JSON into Java structures, Each book = Map<String, Object>, books = list of maps
 

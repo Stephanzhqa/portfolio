@@ -7,9 +7,11 @@ import config.BasePage;
 import pom.pages.SearchPage;
 import tests.config.BaseUITest;
 import logger.BaseLogger;
+import com.codeborne.selenide.junit5.ScreenShooterExtension;
 
 
 @ExtendWith(TextReportExtension.class)
+@ExtendWith(ScreenShooterExtension.class)
 
 public class SearchBookTest extends BaseUITest {
 
@@ -20,7 +22,7 @@ public class SearchBookTest extends BaseUITest {
 
     @Test
     public void userCanSearchBook() {
-        basePage.openUrl("/books");
+        basePage.openUrl("https://demoqa.com/books");
         baseLogger.consoleLogInfo("Book page opened");
         searchPage.mainElementsSearchIsDisplayed();
         baseLogger.consoleLogInfo("Search page elements displayed");

@@ -13,7 +13,7 @@ public class LoginTest {
     private static final String BASE_URL = "https://demoqa.com";
     private static final String LOGIN_ENDPOINT = "/Account/v1/Login";
 
-    private static final String USERNAME = "Bob";
+    private static final String USERNAME = "Nick";
     private static final String PASSWORD = "Alex123!";
 
     @Test
@@ -40,7 +40,9 @@ public class LoginTest {
                         .body("token", notNullValue())
                         .body("expires", notNullValue())
                         .body("isActive", notNullValue())
+                        .log().all()
                         .extract().response();
+
 
         // Additional assertions
         String token = response.jsonPath().getString("token");

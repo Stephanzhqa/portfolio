@@ -15,12 +15,13 @@ public class BaseUITest {
         System.out.println("Successful BaseUI setup");
         Configuration.browser = "chrome";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.timeout = 10_000; //Makes waits explicit and readable.
+        Configuration.timeout = 15000; //Makes waits explicit and readable.
 
         //Prevents renderer timeouts, Speeds up tests, Reduces flakiness
         //Selenium considers the page “loaded” when:
         //HTML is loaded, DOM is ready, does NOT wait for: ads, analytics, fonts, trackers
-        Configuration.pageLoadStrategy = "eager";
+        Configuration.pageLoadStrategy = "normal";
+        Configuration.screenshots = true;
 
         //Runs Chrome without UI. Faster execution. Required for CI/CD. Works better with Docker / Selenoid
         Configuration.headless = true;

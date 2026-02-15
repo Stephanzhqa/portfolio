@@ -1,5 +1,6 @@
 package pom.pages;
 
+import com.codeborne.selenide.WebDriverRunner;
 import helpers.Actions;
 import helpers.Assertions;
 import pom.selectors.pagesSelectors.SearchPageSel;
@@ -20,9 +21,11 @@ public class SearchPage {
         assertions.isVisible(searchPageSel.searchTableContent);
         assertions.isVisible(searchPageSel.searchPagination);
         assertions.isVisible(searchPageSel.searchLoginBtn);
-
         assertions.isVisible(Header.pageTitle);
         assertions.isVisible(Footer.allRightsReserved);
+        if (!WebDriverRunner.url().contains("books")) {
+            throw new IllegalStateException("Books page did not load correctly");
+        }
     }
 
     public void successfulSearchBook () {
